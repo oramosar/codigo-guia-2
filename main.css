@@ -1,0 +1,46 @@
+body
+{
+
+background: url(../img/background.jpg);
+}
+
+header
+{
+class: responsive;
+	margin-top: 4%;
+	margin-right: 2%;
+	margin-left: 2%;
+	text-align: center;
+
+}
+
+.pad-basic
+
+{
+padding:.5%;
+
+}
+
+.no-btm
+{
+	margin-bottom:0%;
+}
+
+.btn-der
+{
+	text-align: right;
+}
+
+
+h2{
+
+	color: chocolate !important;
+}
+footer{
+	class: responsive;
+	background:blue-cyan;
+	text-align: center;
+	color: chocolate;
+	padding-left:
+
+}
