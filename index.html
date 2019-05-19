@@ -2,45 +2,46 @@
 
 <html lang="es">
 
-	<head>
-		<title> HOJAS DE MEDIDAS</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head>
+	<title> HOJAS DE MEDIDAS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-		<link rel="stylesheet" href="main.css" rel="stylesheet">
+	<link rel="stylesheet" href="main.css" rel="stylesheet">
 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 
-		<script src="main.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-	</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 
-	<body>
-		<header>
-			<div class="alert alert-info">
+	<script src="main.js"></script>
+
+</head>
+
+<body>
+	<header>
+		<div class="alert alert-info">
 			<h2>Insertar Registros Denominaciones Billetes</h2>
-	     	</div>
-		</header>
-<section>
+		</div>
+	</header>
+	<section>
 
 		<div class="table-responsive">
-	      <table class="table table-striped table-bordered table-hover">
+			<table class="table table-striped table-bordered table-hover">
 
-					<tr class="info">
-						<th>Denominacion</th>
-						<th>Lote</th>
-						<th>Edicion</th>
-						<th>Proceso</th>
-						<th>Pinza</th>
-						<th>Contra pinza</th>
-						<th>Registro</th>
-			            <th>Contra registro</th>
-				    </tr>
-				  <?php
+				<tr class="info">
+					<th>Denominacion</th>
+					<th>Lote</th>
+					<th>Edicion</th>
+					<th>Proceso</th>
+					<th>Pinza</th>
+					<th>Contra pinza</th>
+					<th>Registro</th>
+					<th>Contra registro</th>
+
+				</tr>
+				<?php
 
 				  while($registroBilletes = $queryBilletes->fetch_array( MYSQLI_BOTH))
 				  {
@@ -61,67 +62,67 @@
 				  ?>
 
 
-				</table>
-				</div>
+			</table>
+		</div>
 
-	<div class="text-center" >
-	<footer>
-	<h3 class="text-center pad-basic no-btm">Agregar Nuevo Registro </h3>
-		</footer>
+		<div class="text-center">
+			<footer>
+				<h3 class="text-center pad-basic no-btm">Agregar Nuevo Registro </h3>
+			</footer>
 
-	   </div>
+		</div>
 
-			<form>
+		<form>
 			<div class="table-responsive">
-				<table class="table bg-info"  id="tabla">
+				<table class="table bg-info" id="tabla">
 					<tr class="fila-fija">
 						<td>
 
+							<div>
+								<select required name="iddenominacion[]" id="option">
+									<option value="">Denominacion</option>
+									<option value="">2.000 NFB</option>
+									<option value="">5.000 NFB</option>
+									<option value="">10.000 NFB</option>
+									<option value="">20.000 NFB</option>
+									<option value="">50.000 NFB </option>
+									<option value="">100.000 NFB</option>
+								</select>
+							</div>
+						</td>
 						<div>
-						  <select required name="iddenominacion[]" id="option">
-						     <option value="">Denominacion</option>
-   		                     <option value="">2.000 NFB</option>
-   		                     <option value="">5.000 NFB</option>
-   		                     <option value="">10.000 NFB</option>
-   		                     <option value="">20.000 NFB</option>
-   		                     <option value="">50.000 NFB </option>
-   		                     <option value="">100.000 NFB</option>
-                          </select>
-				        </div>
-				        </td>
-						<div>
 
-						    <td><input required name="lote[]" placeholder="Numero de Lote"/></td>
-						    <td><input required name="edicion[]" placeholder="Edicion"/></td>
-						     <td>
+							<td><input required name="lote[]" placeholder="Numero de Lote" /></td>
+							<td><input required name="edicion[]" placeholder="Edicion" /></td>
+							<td>
 
-						         <select required name="proceso[]" placeholder="Proceso" id ="option"/>
-							        <option value="">Proceso</option>
-							        <option value="">Blancas</option>
-   		               		        <option value="">Fondos ANV</option>
-   		                 	        <option value="">Fondos REV</option>
-   		                	        <option value="">Calcografia ANV</option>
-   		                	        <option value="">Calcografia REV </option>
-					              </select>
-					          </td>
-					    </div>
+								<select required name="proceso[]" placeholder="Proceso" id="option" />
+								<option value="">Proceso</option>
+								<option value="">Blancas</option>
+								<option value="">Fondos ANV</option>
+								<option value="">Fondos REV</option>
+								<option value="">Calcografia ANV</option>
+								<option value="">Calcografia REV </option>
+								</select>
+							</td>
+						</div>
 
-						<td><input required name="pinza[]" placeholder="Pinza"/></td>
-						<td><input required name="contrapinza[]" placeholder="Contrapinza"/></td>
-						<td><input required name="registro[]" placeholder="Registro"/></td>
-						<td><input required name="contraregistro[]" placeholder="Contraregistro"/></td>
-						<td class="eliminar"><input type="button"   value="Menos -"/></td>
+						<td><input required name="pinza[]" placeholder="Pinza" /></td>
+						<td><input required name="contrapinza[]" placeholder="Contrapinza" /></td>
+						<td><input required name="registro[]" placeholder="Registro" /></td>
+						<td><input required name="contraregistro[]" placeholder="Contraregistro" /></td>
+						<td class="eliminar"><input type="button" value="Menos -" /></td>
 					</tr>
 				</table>
-            </div>
-				<div class="btn-der">
-					<input type="submit" name="insertar" value="Insertar Dato" class="btn btn-info"/>
-					<button id="adicional" name="adicional" type="button" class="btn btn-warning"> Más + </button>
+			</div>
+			<div class="btn-der">
+				<input type="submit" name="insertar" value="Insertar Dato" class="btn btn-info" />
+				<button id="adicional" name="adicional" type="button" class="btn btn-warning"> Más + </button>
 
-				</div>
-			</form>
+			</div>
+		</form>
 
-			<?php
+		<?php
 
 				//////////////////////// PRESIONAR EL BOTÓN //////////////////////////
 				if(isset($_POST['insertar']))
@@ -188,21 +189,20 @@
 				    // Check terminator
 				    if($item1 === false && $item2 === false && $item3 === false && $item4 === false && $item5 === false && $item6 === false && $item7 === false && $item8 === false) break;
 
-				}
+				          }
 
 				}
 
 			?>
 
 
-</section>
+	</section>
 
 
-		<footer>
-		</footer>
+	<footer>
+	</footer>
 
-	</body>
+</body>
 
 </html>
-
 
