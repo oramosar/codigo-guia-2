@@ -6,7 +6,7 @@ background: url(../img/background.jpg);
 
 header
 {
-class: responsive;
+clear: responsive;
 	margin-top: 4%;
 	margin-right: 2%;
 	margin-left: 2%;
@@ -37,7 +37,7 @@ h2{
 	color: chocolate !important;
 }
 footer{
-	class: responsive;
+	clear: responsive;
 	background:blue-cyan;
 	text-align: center;
 	color: chocolate;
